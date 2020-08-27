@@ -1,0 +1,17 @@
+{
+  "name": "simple-searcher",
+  "version": "1.0.0",
+  "description": "A simple App that utilizes the Algolia Search Platform",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adeyinka Adegbenro <adeyinkaadegbenro@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "algoliasearch": "^4.4.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  }
+}
