@@ -1,7 +1,10 @@
-// TODO: retrieve the secured_api_key  
+// TODO 5: retrieve the secured_api_key  
 
 function searchContacts(app_id, search_key) {
-    const searchClient = '' // TODO: Add the Algolia search Client
+    const searchClient = algoliasearch(
+        app_id,
+        search_key // search only API key, not admin API key
+    );
       
     const search = instantsearch({
         indexName: 'contacts',

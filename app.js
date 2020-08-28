@@ -3,7 +3,7 @@ require('dotenv').config();
 var express = require('express');
 const app = express();
 const path = require('path');
-const port = 3000
+const port = process.env.PORT
 const algoliasearch = require('algoliasearch');
 
 app.use(express.static('src'));
@@ -13,10 +13,10 @@ ALGOLIA_APP_ID = ''
 ALGOLIA_SEARCH_ONLY_KEY = ''
 
 
-// TODO: Create an Index
+// TODO: Create an Index on Algolia
 
 
-// TODO: push data to index on Algolia
+// TODO: push data to the contact Index on Algolia
 
 
 app.get('/', function (req, res) {
