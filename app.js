@@ -8,15 +8,15 @@ const algoliasearch = require('algoliasearch');
 
 app.use(express.static('src'));
 
-// TODO: Get Algolia Secrets
+// TODO 1: Get Algolia Secrets
 ALGOLIA_APP_ID = ''
 ALGOLIA_SEARCH_ONLY_KEY = ''
 
 
-// TODO: Create an Index on Algolia
+// TODO 2: Create an Index on Algolia
 
 
-// TODO: push data to the contact Index on Algolia
+// TODO 3: push data to the contact Index on Algolia
 
 
 app.get('/', function (req, res) {
@@ -24,7 +24,7 @@ app.get('/', function (req, res) {
   res.sendFile(__dirname + '/src/html/index.html');
 });
 
-// TODO: Generate a Secured API Key for Search, and sent to the front-end
+// TODO 4: Generate a Secured API Key for Search, and sent to the front-end
 
 
 app.listen(port, function () {
