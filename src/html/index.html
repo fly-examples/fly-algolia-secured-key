@@ -16,13 +16,24 @@
 
   <!-- TODO 6: COMMENT THE NEXT LINE OUT-->
   <p>Hello World</p>
-
   <script type="text/html" id="hit-template">
     <div class="hit">
-      <p class="hit-name">
-        {{#helpers.highlight}}{ "attribute": "firstname" }{{/helpers.highlight}}
+      <div class="hit-name">
+        <span class="prop">Name:</span> {{#helpers.highlight}}{ "attribute": "firstname" }{{/helpers.highlight}}
         {{#helpers.highlight}}{ "attribute": "lastname" }{{/helpers.highlight}}
-      </p>
+      </div>
+      <div class="hit-company">
+        <span class="prop">Company:</span> {{#helpers.highlight}}{ "attribute": "company" }{{/helpers.highlight}}
+      </div>
+      <div class="hit-email">
+        <span class="prop">Email:</span> {{#helpers.highlight}}{ "attribute": "email" }{{/helpers.highlight}}
+      </div>
+      <div class="hit-address">
+        <span class="prop" >Address:</span> {{#helpers.highlight}}{ "attribute": "address" }{{/helpers.highlight}}
+      </div>
+      <div class="hit-city">
+        <span class="prop">City:</span> {{#helpers.highlight}}{ "attribute": "city" }{{/helpers.highlight}}
+      </div>
     </div>
   </script>
 
@@ -30,3 +41,14 @@
   <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.0.0/dist/instantsearch.production.min.js" integrity="sha256-6S7q0JJs/Kx4kb/fv0oMjS855QTz5Rc2hh9AkIUjUsk=" crossorigin="anonymous"></script>
   <script src="/js/index.js"></script>
 </body>
+
+<style>
+  .prop {
+    font-weight:bold;
+  }
+  
+  .hit div {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+</style>

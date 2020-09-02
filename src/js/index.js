@@ -32,7 +32,10 @@ function searchContacts(app_id, search_key) {
                 item: document.getElementById('hit-template').innerHTML,
                 empty: `We didn't find any results for the search <em>"{{query}}"</em>`,
             },
-        })
+        }),
+        instantsearch.widgets.pagination({
+            container: '#pagination',
+        }),
     ]);
     
     search.start();
