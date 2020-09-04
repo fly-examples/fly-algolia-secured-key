@@ -3,4 +3,4 @@ This NodeJS/Express App is a simple [Algolia-hosted](https://www.algolia.com/) s
 
 ## Running locally
 - npm start
-- Visit http://localhost:3000/
+- Visit http://localhost:8080/
