@@ -11,7 +11,7 @@ app.use(express.static('src'));
 // TODO 1: Get Algolia Secrets
 ALGOLIA_APP_ID = ''
 ALGOLIA_SEARCH_ONLY_KEY = ''
-ADMIN_API_KEY = process.env.ADMIN_API_KEY
+ADMIN_API_KEY = ''
 
 // TODO 2: Create an Index on Algolia
 
