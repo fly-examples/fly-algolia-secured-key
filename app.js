@@ -1,10 +1,11 @@
-require('dotenv').config();
-
 const express = require('express');
 const app = express();
-const port = process.env.PORT || '8080';
+const port = '8080';
 const algoliasearch = require('algoliasearch');
-const client = algoliasearch(process.env.ALGOLIA_APP_ID, process.env.ADMIN_API_KEY);
+const client = algoliasearch(
+  process.env.ALGOLIA_APP_ID,
+  process.env.ALGOLIA_ADMIN_API_KEY
+);
 const index = client.initIndex('contacts');
 
 app.use(express.static('src'));

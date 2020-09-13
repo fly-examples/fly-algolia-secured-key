@@ -14,10 +14,10 @@ fetch('/key').then(
     console.log('An error occurred while fetching API Key', err)
 });
 
-function searchContacts(app_id, search_key) {
+function searchContacts(app_id, secured_key) {
     const searchClient = algoliasearch(
-        app_id,
-        search_key // search only API key, not admin API key
+      app_id,
+      secured_key // Secured API key, not admin API key
     );
 
     const search = instantsearch({
