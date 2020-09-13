@@ -196,7 +196,7 @@ The code above creates an index and then loads the JSON data from `contacts.json
     "followers": 3574
   },
 ...
-`" 
+```
 
 Now you are ready to start your Express app and load some data into Algolia. Run the following from your terminal with your Algolia credentials:
 
