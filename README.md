@@ -1,6 +1,6 @@
 ## Algolia Secured API Key Generation on the Edge
 
-[Algolia](https://www.algolia.com/) is a hosted search service that helps you create better user experiences through fast, powerful, and easy to integrate search technology. While [Solr](https://lucene.apache.org/solr/) and [ElasticSearch](https://www.elastic.co/elasticsearch/) can be configured to offere user-facing search, Algolia's focus is on user-facing search and it offers an API that allows you to add search functionality to any platform or programming language.
+[Algolia](https://www.algolia.com/) is a hosted search service that helps you create better user experiences through fast, powerful, and easy to integrate search technology. While [Solr](https://lucene.apache.org/solr/) and [ElasticSearch](https://www.elastic.co/elasticsearch/) can be configured to offer user-facing search, Algolia's focus is on user-facing search and it offers an API that allows you to add search functionality to any platform or programming language.
 
 To authenticate users who call their API, Algolia uses API Keys, keys that must be stored securely. This typically means they're only stored on your server. You don't want to have your servers managaing every search request though, so to take advantage of Algolia's fast, globally-distributed search index, you want to allow users to call Algolia's API directly from their browser. It's likely that you don't want to give those users complete access to your API keys. Fortunately, there are ways around these limitations.
 
