@@ -317,28 +317,9 @@ Since you already added the UI for this application in the `src/html/index.html`
 You can search for contacts on the app. The results are retrieved from the Algolia index and should contain all of the contacts you imported previously.
 
 ### Deploying the Application to Fly
-The final step is to take advantage of the speed of Fly's edge hosting network by deploying your app to Fly. 
+The final step is to take advantage of the speed of Fly's edge hosting network by deploying your app to Fly. Each Fly application also needs a `fly.toml` file to tell Fly how to deploy it. This file can be generated using the `flyctl` command-line tool. If you have not already installed the correct version of `flyctl` for your operating system, follow the [instructions here](https://fly.io/docs/hands-on/installing/).
 
-Before you deploy your application to Fly, it needs to have a Dockerfile. Fly uses this to package up the app and install the dependencies. Create a `Dockerfile` in the root of your application and add the following:
-
-```dockerfile
-FROM node:current-alpine
-
-WORKDIR /app
-
-COPY package.json .
-COPY package-lock.json .
-
-RUN npm install --production
-
-COPY . .
-
-CMD ["npm", "start"]
-```
-
-Each Fly application also needs a `fly.toml` file to tell Fly how to deploy it. This file can be generated using the `flyctl` command-line tool. If you have not already installed the correct version of `flyctl` for your operating system, follow the [instructions here](https://fly.io/docs/hands-on/installing/).
-
-Next, sign up or sign in to your Fly account:
+Sign up or sign in to your Fly account:
 
 ```
 # Sign up
@@ -350,12 +331,34 @@ flyctl auth login
 
 Create the `fly.toml` file using `flyctl init`.
 
-You'll be asked for an application name. It's probably best to use the recommended name because it is always unique. Select your organization, the "Dockerfile" builder, and the default port ("8080"). The `fly.toml` is created at the end of the session and should look like this:
+You'll be asked for an application name. It's probably best to use the recommended name because it is always unique. Select your organization, the "node" builder, and the default port ("8080"):
 
 ```
-# fly.toml file generated for snowy-haze-2901 on 2020-08-28T03:26:10+01:00
+? App Name (leave blank to use an auto-generated name) 
 
-app = "snowy-haze-2901"
+? Select organization: Karl Hughes (karl-hughes)
+
+? Select builder: node
+    Nodejs builtin
+? Select Internal Port: 8080
+
+New app created
+  Name     = solitary-hill-4573  
+  Owner    = karl-hughes         
+  Version  = 0                   
+  Status   =                     
+  Hostname = <empty>
+```
+
+The `fly.toml` is created at the end of the session and should look like this:
+
+```
+# fly.toml file generated for solitary-hill-4573 on 2020-09-17T05:29:07-05:00
+
+app = "solitary-hill-4573"
+
+[build]
+  builtin = "node"
 
 
 [[services]]
@@ -396,7 +399,7 @@ Deploy your application to Fly:
 flyctl deploy
 ```
 
-After the Docker image has been built and deployed to Fly, you can view the application by running:
+After the app has been built and deployed to Fly, you can view the application by running:
 
 ```bash
 flyctl open
